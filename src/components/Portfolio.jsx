@@ -1,12 +1,21 @@
 import React from "react";
 import tindog from "../assets/tindog.png";
+import hacker from "../assets/hackernews.png";
 
 const Portfolio = () => {
   const portfolios = [
     {
       id: 1,
       src: tindog,
+      demo : "https://dhruvpatel-code.github.io/TinDog/",
+      code : "https://github.com/dhruvpatel-code/TinDog"
     },
+    {
+      id: 2,
+      src: hacker,
+      demo : "https://hackernewsnewarticles.azurewebsites.net/",
+      code : "https://github.com/dhruvpatel-code/HackerNewsProd"
+    }
   ];
 
   return (
@@ -23,7 +32,7 @@ const Portfolio = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-          {portfolios.map(({ id, src }) => (
+          {portfolios.map(({ id, src, demo, code }) => (
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
               <img
                 src={src}
@@ -35,7 +44,7 @@ const Portfolio = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     window.location.href =
-                      "https://dhruvpatel-code.github.io/TinDog/";
+                      demo;
                   }}
                   className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
                 >
@@ -46,7 +55,7 @@ const Portfolio = () => {
                   onClick={(e) => {
                     e.preventDefault();
                     window.location.href =
-                      "https://github.com/dhruvpatel-code/TinDog";
+                      code;
                   }}
                   className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105"
                 >
